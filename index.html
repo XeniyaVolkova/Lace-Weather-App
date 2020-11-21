@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/d7f163f52b.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Enriqueta&family=Glegoo&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-2">
+                <img src="spring.png" alt="spring girl" class="girl" width=270px />
+            </div>
+            <div class="col-xs-10 col-centered" id="firstRow">
+
+                <div class="input-icon">
+                    <form id="search-form">
+                        <input type="text" id="city-input" placeholder="Enter a city..." class="search" />
+                        <div class="search-btn" id="current-location-button">
+                            <button type="button"><i class="fas fa-map-marker-alt"></i></button>
+
+                    </form>
+
+                </div>
+                <button type="submit" class="laceSearch">
+                    Search
+                </button>
+                <div class="row">
+                    <div class="col-4">
+                        <div class="mainInfo">
+
+                            <p><span id="temperature">51</span><span class="units">°C/F</span></p>
+                            <p id="description">
+                            <p>
+                            <p id="descriptionFeel">Feels like:</p>
+
+
+                            <p>Wind: <span id="wind">0</span>
+                            </p>
+                            <p>Humidity: <span id="humidity">0</span>
+                            </p>
+                            <p id="rainChances">Chances of rain:</p>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <img class="centerPicture" src="rainbow.png" alt="rainbow" width=150px />
+                    </div>
+                    <div class="col-4">
+                        <div class="hourlyForecast">
+                            <p>23:00 65C <i class="fas fa-umbrella"></i> <span>9%</span></p>
+                            <p>23:00 65C <i class="fas fa-umbrella"></i> <span>9%</span></p>
+                            <p>23:00 65C <i class="fas fa-umbrella"></i> <span>9%</span></p>
+                            <p>23:00 65C <i class="fas fa-umbrella"></i> <span>9%</span></p>
+                            <p>23:00 65C <i class="fas fa-umbrella"></i> <span>9%</span></p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="row no-gutters">
+        <div class="col-xs-3 col-centered">
+            <p class="cityName" id="city-name"></p>
+            <p class="currentDate" id="current-time"></p>
+        </div>
+
+        <div class="col-9">
+            <div class="row no-gutters">
+                <div class="marker col">
+                    <p class="fiveDays">Sat</p>
+                    <p class="fiveDaysTemperature">
+                        +17°
+                        <br />
+                        <i class="fas fa-poo-storm"></i>
+                    </p>
+                </div>
+                <div class="marker col">
+                    <p class="fiveDays">Sun</p>
+                    <p class="fiveDaysTemperature">
+                        +20°
+                        <br />
+                        <i class="fas fa-cloud-sun"></i>
+                    </p>
+                </div>
+                <div class="marker col">
+                    <p class="fiveDays">Mon</p>
+                    <p class="fiveDaysTemperature">
+                        +21°
+                        <br />
+                        <i class="fas fa-cloud-sun"></i>
+                    </p>
+                </div>
+                <div class="marker col">
+                    <p class="fiveDays">Tue</p>
+                    <p class="fiveDaysTemperature">
+                        +18°
+                        <br />
+                        <i class="fas fa-cloud-sun-rain"></i>
+                    </p>
+                </div>
+                <div class="marker col">
+                    <p class="fiveDays">Wed</p>
+                    <p class="fiveDaysTemperature">
+                        +16°
+                        <br />
+                        <i class="fas fa-cloud-showers-heavy"></i>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    </div>
+    <p class="linkGitHub"><a href="https://github.com/XeniyaVolkova/Glam-weather-app">Open-source code</a> by Xeniya V.
+    </p>
+    <script src="script.js"></script>
+</body>
+
+</html>

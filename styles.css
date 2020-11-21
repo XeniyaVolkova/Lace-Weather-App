@@ -1,0 +1,138 @@
+body {
+  background-image: url("https://static.wixstatic.com/media/3688c9_d65b334520024c849e989ee121bc1280~mv2.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  background-color: #faf4f4;
+  border: 3px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 600px;
+}
+p {
+  line-height: 9px;
+  font-family: "Glegoo", serif;
+}
+form {
+  display: inline-flex;
+  border: 1px solid #2b1020;
+  border-radius: 5px;
+  padding: 1px;
+  width: 350px;
+}
+
+.search-btn {
+  padding-right: 10px;
+  color: #2b1020;
+}
+div input[type="text"] {
+  background-color: #faf4f4;
+  border: none;
+  outline: none;
+  font-family: "Glegoo", serif;
+  font-size: 13px;
+  margin-left: 15px;
+  background-repeat: repeat;
+  width: 310px;
+}
+button {
+  padding: 5px;
+  border: 0;
+  background: #faf4f4;
+  color: #2b1020;
+}
+
+.laceSearch {
+  display: inline;
+  margin: 0 auto;
+  padding-top: 9px;
+  padding-bottom: 7px;
+  padding-left: 25px;
+  padding-right: 20px;
+  background-image: url("https://static.wixstatic.com/media/3688c9_7e4a2134c07d41399a83c5cf57cfdd8c~mv2.jpg");
+  background-size: cover;
+  background-position: center;
+  font-family: "Glegoo", serif;
+  font-size: 13px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.3);
+  transition: all 200ms ease-in-out;
+}
+.laceSearch:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+.fiveDays {
+  color: black;
+  padding-top: 20px;
+  margin-bottom: 15px;
+  font-size: 20px;
+  line-height: 1;
+  text-align: center;
+}
+.fiveDaysTemperature {
+  color: black;
+  text-align: center;
+  font-size: 16px;
+  padding-top: 0;
+  margin-top: 0;
+}
+.marker {
+  text-align: center;
+}
+.col-centered {
+  float: none;
+  margin: 0 auto;
+}
+.cityName {
+  padding-top: 20px;
+  margin-bottom: 15px;
+  font-size: 20px;
+  line-height: 1;
+  font-weight: bold;
+  text-align: center;
+}
+.currentDate {
+  color: black;
+  text-align: center;
+  font-size: 16px;
+  padding-top: 0;
+  margin-top: 0;
+}
+.currentTime {
+  color: black;
+  text-align: center;
+  font-size: 16px;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+.middleClass {
+  display: block;
+  margin-top: 90px;
+}
+#temperature {
+  font-size: 50px;
+}
+
+.mainInfo {
+  margin-top: 90px;
+  margin-left: 10px;
+}
+.hourlyForecast {
+  margin-top: 90px;
+  margin-left: 10px;
+  line-height: 8px;
+}
+.centerPicture {
+  margin-top: 90px;
+  margin-left: 0px;
+}
+
+.linkGitHub {
+  text-align: center;
+}
