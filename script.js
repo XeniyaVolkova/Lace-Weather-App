@@ -34,7 +34,7 @@ function displayWeatherCondition(response) {
   document.querySelector("#descriptionFeel").innerHTML=Math.round(response.data.main.feels_like);
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
-    console.log(response.data)
+    celsiusTemperature=response.data.main.temp;
 }
 function searchLocation(position) {
   let apiKey = "9724f817a3ad04371bf18467e4cb2880";
@@ -58,6 +58,13 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
+function displayFahrenheitTemperature(event){
+  event.preventDefault();
+  let fahrenheitTemperature=Math.round((celsiusTemperature * 9)/5 + 32);
+  document.querySelector("#temperature").innerHTML =fahrenheitTemperature;
+  
+}
+
 let currentTime = new Date();
 let dateElement = document.querySelector("#current-time");
 let searchForm = document.querySelector("#search-form");
@@ -67,4 +74,10 @@ dateElement.innerHTML = formatDate(currentTime);
 
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+let celsiusTemperature=null;
+
+let fahrenheitLink=document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
 search("New York");
