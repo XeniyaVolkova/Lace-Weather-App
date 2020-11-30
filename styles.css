@@ -73,6 +73,11 @@ button:focus {
   border: none;
   outline: none;
 }
+.laceSearch:active {
+  box-shadow: 0 1px 0 #515251;
+  transform: translateY(1.5px);
+  bottom: -4px;
+}
 
 .fiveDays {
   color: black;
