@@ -31,8 +31,10 @@ function displayWeatherCondition(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  document.querySelector("#descriptionFeel").innerHTML=Math.round(response.data.main.feels_like);
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
+    console.log(response.data)
 }
 function searchLocation(position) {
   let apiKey = "9724f817a3ad04371bf18467e4cb2880";
