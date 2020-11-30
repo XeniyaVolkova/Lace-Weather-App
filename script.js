@@ -65,6 +65,11 @@ function displayFahrenheitTemperature(event){
   
 }
 
+function displayCelsiusTemperature(event){
+  event.preventDefault();
+  document.querySelector("#temperature").innerHTML =Math.round(celsiusTemperature);
+}
+
 let currentTime = new Date();
 let dateElement = document.querySelector("#current-time");
 let searchForm = document.querySelector("#search-form");
@@ -79,5 +84,8 @@ let celsiusTemperature=null;
 
 let fahrenheitLink=document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink=document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("New York");
