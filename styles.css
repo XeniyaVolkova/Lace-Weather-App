@@ -10,7 +10,7 @@ body {
   border-radius: 20px;
   padding: 20px;
   margin: 30px auto;
-  max-width: 600px;
+  max-width: 1000px;
 }
 p {
   line-height: 9px;
@@ -44,7 +44,10 @@ button {
   background: #faf4f4;
   color: #2b1020;
 }
-
+button:focus {
+  border: none;
+  outline: none;
+}
 .laceSearch {
   display: inline;
   margin: 0 auto;
@@ -60,10 +63,15 @@ button {
   border-radius: 5px;
   box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.3);
   transition: all 200ms ease-in-out;
+  outline: none;
 }
 .laceSearch:hover {
   opacity: 0.9;
   cursor: pointer;
+}
+.laceSearch:focus {
+  border: none;
+  outline: none;
 }
 
 .fiveDays {
