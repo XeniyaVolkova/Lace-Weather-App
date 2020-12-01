@@ -1,5 +1,7 @@
-function formatDate(date) {
+function formatDate(timestamp) {
+  let date= new Date(timestamp);
   let hours = date.getHours();
+  
   if (hours < 10) {
     hours = `0${hours}`;
   }
@@ -35,6 +37,7 @@ function displayWeatherCondition(response) {
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
     celsiusTemperature=response.data.main.temp;
+    document.querySelector("#current-time").innerHTML=formatDate(response.data.dt*1000);
 }
 function searchLocation(position) {
   let apiKey = "9724f817a3ad04371bf18467e4cb2880";
@@ -62,12 +65,13 @@ function displayFahrenheitTemperature(event){
   event.preventDefault();
   let fahrenheitTemperature=Math.round((celsiusTemperature * 9)/5 + 32);
   document.querySelector("#temperature").innerHTML =fahrenheitTemperature;
-  
+  document.querySelector("#descriptionFeel").innerHTML =fahrenheitTemperature;
 }
 
 function displayCelsiusTemperature(event){
   event.preventDefault();
   document.querySelector("#temperature").innerHTML =Math.round(celsiusTemperature);
+  document.querySelector("#descriptionFeel").innerHTML =Math.round(celsiusTemperature);
 }
 
 let currentTime = new Date();

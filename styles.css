@@ -10,7 +10,7 @@ body {
   border-radius: 20px;
   padding: 20px;
   margin: 30px auto;
-  max-width: 1000px;
+  max-width: 900px;
 }
 p {
   line-height: 9px;
@@ -103,25 +103,21 @@ button:focus {
 }
 .cityName {
   padding-top: 20px;
-  margin-bottom: 15px;
+  margin-bottom: 0;
+  padding-bottom: 0;
   font-size: 20px;
   line-height: 1;
   font-weight: bold;
   text-align: center;
 }
 .currentDate {
+  text-align: center;
   color: black;
   text-align: center;
   font-size: 16px;
   padding-top: 0;
   margin-top: 0;
-}
-.currentTime {
-  color: black;
-  text-align: center;
-  font-size: 16px;
-  padding-top: 0;
-  margin-top: 0;
+  line-height: 2;
 }
 
 .middleClass {
@@ -129,7 +125,7 @@ button:focus {
   margin-top: 90px;
 }
 #temperature {
-  font-size: 50px;
+  font-size: 45px;
 }
 
 .mainInfo {
@@ -148,4 +144,11 @@ button:focus {
 
 .linkGitHub {
   text-align: center;
+}
+
+#units .active {
+  color: black;
+  font-weight: 200;
+  cursor: default;
+  text-decoration: none;
 }
