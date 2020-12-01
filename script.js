@@ -24,6 +24,20 @@ function formatDate(timestamp) {
   return `${days[dayIndex]}, ${hours}:${minutes}`;
 }
 
+function formatHours(timestamp){
+  let date= new Date(timestamp);
+  let hours = date.getHours();
+  
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hours}:${minutes}`;
+}
+
 function displayWeatherCondition(response) {
   document.querySelector("#city-name").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
@@ -38,17 +52,33 @@ function displayWeatherCondition(response) {
     response.data.weather[0].main;
     celsiusTemperature=response.data.main.temp;
     document.querySelector("#current-time").innerHTML=formatDate(response.data.dt*1000);
-}
+console.log(response.data);
+  }
 function searchLocation(position) {
   let apiKey = "9724f817a3ad04371bf18467e4cb2880";
   let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
   let apiUrl = `${apiEndpoint}?lat=${position.coords.latitude}&lon=${position.coords.longitude}&cnt=10&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition);
+ 
+}
+function displayForecast (response){
+  let forecast=response.data.list[0]
+  
+  let forecastElement=document.querySelector("#forecast");
+  forecastElement.innerHTML=` 
+  <div class="marker col">
+  <p class="fiveDays">${formatHours(forecast.dt*1000)}</p>
+  <p> <i class="fas fa-poo-storm"></i> </p> 
+  <p class="fiveDaysTemperature"><strong>${Math.round(forecast.main.temp_max)}°</strong> ${Math.round(forecast.main.temp_min)}°</p>
+  </div>`
+console.log(response.data);
 }
 function search(city) {
   let apiKey = "9724f817a3ad04371bf18467e4cb2880";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition);
+  apiUrl=`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function handleSubmit(event) {
@@ -65,13 +95,13 @@ function displayFahrenheitTemperature(event){
   event.preventDefault();
   let fahrenheitTemperature=Math.round((celsiusTemperature * 9)/5 + 32);
   document.querySelector("#temperature").innerHTML =fahrenheitTemperature;
-  document.querySelector("#descriptionFeel").innerHTML =fahrenheitTemperature;
+  
 }
 
 function displayCelsiusTemperature(event){
   event.preventDefault();
   document.querySelector("#temperature").innerHTML =Math.round(celsiusTemperature);
-  document.querySelector("#descriptionFeel").innerHTML =Math.round(celsiusTemperature);
+  
 }
 
 let currentTime = new Date();
