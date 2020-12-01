@@ -62,15 +62,22 @@ function searchLocation(position) {
  
 }
 function displayForecast (response){
-  let forecast=response.data.list[0]
-  
+   
   let forecastElement=document.querySelector("#forecast");
-  forecastElement.innerHTML=` 
+  forecastElement.innerHTML=null;
+  let forecast=null;
+
+  for (let index=0; index <6; index++){
+    let forecast=response.data.list[index];
+forecastElement.innerHTML+=` 
   <div class="marker col">
   <p class="fiveDays">${formatHours(forecast.dt*1000)}</p>
   <p> <i class="fas fa-poo-storm"></i> </p> 
   <p class="fiveDaysTemperature"><strong>${Math.round(forecast.main.temp_max)}°</strong> ${Math.round(forecast.main.temp_min)}°</p>
   </div>`
+  }
+
+  
 console.log(response.data);
 }
 function search(city) {
