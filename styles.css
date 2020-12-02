@@ -130,7 +130,7 @@ button:focus {
 
 .mainInfo {
   margin-top: 90px;
-  margin-left: 10px;
+  margin-left: 70px;
 }
 .hourlyForecast {
   margin-top: 90px;
@@ -139,7 +139,6 @@ button:focus {
 }
 .centerPicture {
   margin-top: 90px;
-  margin-left: 0px;
 }
 
 .linkGitHub {
