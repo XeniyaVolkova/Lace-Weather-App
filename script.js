@@ -73,7 +73,7 @@ forecastElement.innerHTML+=`
   <div class="marker col">
   <p class="fiveDays">${formatHours(forecast.dt*1000)}</p>
   <p> <i class="fas fa-poo-storm"></i> </p> 
-  <p class="fiveDaysTemperature"><strong>${Math.round(forecast.main.temp_max)}°</strong> ${Math.round(forecast.main.temp_min)}°</p>
+  <p class="fiveDaysTemperature"><strong>${Math.round(forecast.main.temp_max)}° |</strong> ${Math.round(forecast.main.temp_min)}°</p>
   </div>`
   }
 
