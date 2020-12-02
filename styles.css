@@ -144,6 +144,7 @@ button:focus {
 
 .linkGitHub {
   text-align: center;
+  line-height: 1.5;
 }
 
 #units .active {
