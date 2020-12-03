@@ -100,7 +100,7 @@ forecastElement.innerHTML+=`
             id = "#"
             src="visuals/icon_${forecast.weather[0].icon}.png" width=50
             alt="">   </p> 
-  <p>max °|min °</p>
+  <p class="max-min">max °|min °</p>
             <p class="fiveDaysTemperature"><strong>${Math.round(forecast.main.temp_max)}° |</strong> ${Math.round(forecast.main.temp_min)}°</p>
   </div>`
   }
