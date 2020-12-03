@@ -38,6 +38,12 @@ div input[type="text"] {
   background-repeat: repeat;
   width: 310px;
 }
+div input[type="text"],
+select,
+textarea {
+  background-color: #faf4f4;
+}
+
 button {
   padding: 5px;
   border: 0;
