@@ -54,7 +54,8 @@ function displayWeatherCondition(response) {
     document.querySelector("#current-time").innerHTML=formatDate(response.data.dt*1000);
 console.log(response.data);
 let iconElement=document.querySelector("#icon");
-iconElement.setAttribute("src", `visuals/${response.data.weather[0].icon}@2x.png`);
+iconElement.setAttribute("src", `visuals/icon_${response.data.weather[0].icon}.png`);
+iconElement.setAttribute("alt",`${response.data.weather[0].description}`); 
 let icon = document.querySelector("#girl-icon");
 let currentWeather = response.data.weather[0].main.toLowerCase();if(currentWeather === "clear") {
   icon.setAttribute("src", `Summer.png`);
@@ -93,8 +94,14 @@ function displayForecast (response){
 forecastElement.innerHTML+=` 
   <div class="marker col">
   <p class="fiveDays">${formatHours(forecast.dt*1000)}</p>
-  <p> <i class="fas fa-poo-storm"></i> </p> 
-  <p class="fiveDaysTemperature"><strong>${Math.round(forecast.main.temp_max)}° |</strong> ${Math.round(forecast.main.temp_min)}°</p>
+  
+  <p> <img 
+            class="forecast-3hour-result-icon"
+            id = "#"
+            src="visuals/icon_${forecast.weather[0].icon}.png" width=50
+            alt="">   </p> 
+  <p>max °|min °</p>
+            <p class="fiveDaysTemperature"><strong>${Math.round(forecast.main.temp_max)}° |</strong> ${Math.round(forecast.main.temp_min)}°</p>
   </div>`
   }
 
