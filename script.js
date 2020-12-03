@@ -53,6 +53,27 @@ function displayWeatherCondition(response) {
     celsiusTemperature=response.data.main.temp;
     document.querySelector("#current-time").innerHTML=formatDate(response.data.dt*1000);
 console.log(response.data);
+let iconElement=document.querySelector("#icon");
+iconElement.setAttribute("src", `visuals/${response.data.weather[0].icon}@2x.png`);
+let icon = document.querySelector("#girl-icon");
+let currentWeather = response.data.weather[0].main.toLowerCase();if(currentWeather === "clear") {
+  icon.setAttribute("src", `Summer.png`);
+} else if(currentWeather === "rain") {
+  icon.setAttribute("src", "Rain.png");
+  } else if(currentWeather === "clouds") {
+  icon.setAttribute("src", "Spring.png");
+} else if(currentWeather === "snow") {
+  icon.setAttribute("src", "Snow.png");
+} else if(currentWeather === "mist") {
+  icon.setAttribute("src", "Dressy.png");
+  } else if(currentWeather === "drizzle") {
+  icon.setAttribute("src", "Glam.png");
+} else if(currentWeather === "thunderstorm") {
+  icon.setAttribute("src", "Rain.png");
+} else if(currentWeather === "haze") {
+  icon.setAttribute("src", "Glam.png");
+}
+console.log(data.response)
   }
 function searchLocation(position) {
   let apiKey = "9724f817a3ad04371bf18467e4cb2880";
