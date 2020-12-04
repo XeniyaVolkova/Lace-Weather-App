@@ -81,7 +81,7 @@ if (celsiusTemperature >= 15 && hours >= 1 && hours <= 17  && currentWeather ===
 } else if(celsiusTemperature <= -10 && currentWeather === "clear") {
   icon.setAttribute("src", "Snow.png");
 }
-else if (celsiusTemperature < 15 && celsiusTemperature>= -9 && currentWeather === "clear") {
+else if (celsiusTemperature < 14 && celsiusTemperature>= -9 && currentWeather === "clear") {
   icon.setAttribute("src", "Glam.png");
   //How can I use the "dressy" girl-icon for clear weather higher than 15 but in the evening/at night between 18-24)
 }else if (celsiusTemperature >= 15 && hours >= 18 && hours <= 24 && celsiusTemperature >= 15 && currentWeather === "clear") {
