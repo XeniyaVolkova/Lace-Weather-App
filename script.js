@@ -52,12 +52,14 @@ function displayWeatherCondition(response) {
     response.data.weather[0].main;
     celsiusTemperature=response.data.main.temp;
     document.querySelector("#current-time").innerHTML=formatDate(response.data.dt*1000);
-console.log(response.data);
+
+
 let iconElement=document.querySelector("#icon");
 iconElement.setAttribute("src", `visuals/icon_${response.data.weather[0].icon}.png`);
 iconElement.setAttribute("alt",`${response.data.weather[0].description}`); 
 let icon = document.querySelector("#girl-icon");
-let currentWeather = response.data.weather[0].main.toLowerCase();if(currentWeather === "clear") {
+let currentWeather = response.data.weather[0].main.toLowerCase();
+if(currentWeather === "clear") {
   icon.setAttribute("src", `Summer.png`);
 } else if(currentWeather === "rain") {
   icon.setAttribute("src", "Rain.png");
@@ -74,8 +76,18 @@ let currentWeather = response.data.weather[0].main.toLowerCase();if(currentWeath
 } else if(currentWeather === "haze") {
   icon.setAttribute("src", "Glam.png");
 }
-console.log(data.response)
+if (celsiusTemperature >= 15 && hours >= 1 && hours <= 17  && currentWeather === "clear"){
+   icon.setAttribute("src", `Summer.png`);
+} else if(celsiusTemperature <= -10 && currentWeather === "clear") {
+  icon.setAttribute("src", "Snow.png");
+}
+else if (celsiusTemperature < 15 && celsiusTemperature>= -9 && currentWeather === "clear") {
+  icon.setAttribute("src", "Glam.png");
+}else if (celsiusTemperature >= 15 && hours >= 18 && hours <= 24 && celsiusTemperature >= 15 && currentWeather === "clear") {
+  icon.setAttribute("src", "Dressy.png");
+}
   }
+
 function searchLocation(position) {
   let apiKey = "9724f817a3ad04371bf18467e4cb2880";
   let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
@@ -150,6 +162,7 @@ let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 let celsiusTemperature=null;
+
 
 let fahrenheitLink=document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
