@@ -53,7 +53,7 @@ function displayWeatherCondition(response) {
     celsiusTemperature=response.data.main.temp;
     document.querySelector("#current-time").innerHTML=formatDate(response.data.dt*1000);
 
-
+let responseTime = new Date(response.data.dt * 1000);
 let iconElement=document.querySelector("#icon");
 iconElement.setAttribute("src", `visuals/icon_${response.data.weather[0].icon}.png`);
 iconElement.setAttribute("alt",`${response.data.weather[0].description}`); 
@@ -76,15 +76,15 @@ if(currentWeather === "clear") {
 } else if(currentWeather === "haze") {
   icon.setAttribute("src", "Glam.png");
 }
-if (celsiusTemperature >= 15 && hours >= 1 && hours <= 17  && currentWeather === "clear"){
+if (celsiusTemperature >= 15 && responseTime.getHours() >= 1 && responseTime.getHours() <= 17  && currentWeather === "clear"){
    icon.setAttribute("src", `Summer.png`);
 } else if(celsiusTemperature <= -10 && currentWeather === "clear") {
   icon.setAttribute("src", "Snow.png");
 }
-else if (celsiusTemperature < 14 && celsiusTemperature>= -9 && currentWeather === "clear") {
+else if (celsiusTemperature < 14 && celsiusTemperature >= -10 && currentWeather === "clear") {
   icon.setAttribute("src", "Glam.png");
-  //How can I use the "dressy" girl-icon for clear weather higher than 15 but in the evening/at night between 18-24)
-}else if (celsiusTemperature >= 15 && hours >= 18 && hours <= 24 && celsiusTemperature >= 15 && currentWeather === "clear") {
+
+}else if (celsiusTemperature >= 15 && responseTime.getHours() >= 18 && responseTime.getHours() <= 24 && currentWeather === "clear") {
   icon.setAttribute("src", "Dressy.png");
 }
   }
