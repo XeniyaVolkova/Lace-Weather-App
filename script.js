@@ -89,13 +89,21 @@ else if (celsiusTemperature < 14 && celsiusTemperature >= -10 && currentWeather 
 }
   }
 
-function searchLocation(position) {
+//function searchLocation(position) {
+  //let apiKey = "9724f817a3ad04371bf18467e4cb2880";
+  //let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
+  //let apiUrl = `${apiEndpoint}?lat=${position.coords.latitude}&lon=${position.coords.longitude}&cnt=10&appid=${apiKey}&units=metric`;
+  //axios.get(apiUrl).then(displayWeatherCondition);
+//}
+ function searchLocation(position) {
   let apiKey = "9724f817a3ad04371bf18467e4cb2880";
   let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
   let apiUrl = `${apiEndpoint}?lat=${position.coords.latitude}&lon=${position.coords.longitude}&cnt=10&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition);
- 
+    apiUrl=`https://api.openweathermap.org/data/2.5/forecast?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
+
 function displayForecast (response){
    
   let forecastElement=document.querySelector("#forecast");
